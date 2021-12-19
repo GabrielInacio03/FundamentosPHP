@@ -2,12 +2,11 @@
     /**
      * Validações: filters Validate
      * Funções (filter_input - filter_var)
-     * FILTER_VALIDATE_INT
-     * FILTER_VALIDATE_EMAIL
-     * FILTER_VALIDATE_FLOAT
-     * FILTER_VALIDATE_IP
-     * FILTER_VALIDATE_URL
      */
+
+     /**
+      * Sinitização: Sanitize Filters
+      */
 
     //isset -> se existe
     if(isset($_POST['Enviar'])){
@@ -30,6 +29,11 @@
             $erros[] = "Preencha o campo URL corretamente";
         }
         var_dump($erros);
+
+        //sanitize filters, EXEMPLO
+
+        $idade = filter_input(INPUT_POST,'txtIdade', FILTER_SANITIZE_NUMBER_INT);
+
     }
 ?>
 <!DOCTYPE html>
